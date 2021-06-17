@@ -1,0 +1,25 @@
+{
+	"OnFailure": "/DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action",
+	"OnSuccess": "/DemoSampleApp/Actions/CloseModalPage_Complete.action",
+	"ParentLink": {
+		"Property": "SalesOrders",
+		"Target": {
+			"EntitySet": "Customers",
+			"ReadLink": "{@odata.readLink}"
+		}
+	},
+	"Properties": {
+		"CreatedAt": "#Page:SalesOrderHeader_create/#Control:FCDate/#Value",
+		"CurrencyCode": "#Page:SalesOrderHeader_create/#Control:FCCurrencyCode/#Value",
+		"GrossAmount": "#Page:SalesOrderHeader_create/#Control:FCGrossAmount/#Value",
+		"LifeCycleStatus": "#Page:SalesOrderHeader_create/#Control:FCLifeCycleStatus/#Value",
+		"LifeCycleStatusName": "#Page:SalesOrderHeader_create/#Control:FCLifeCycleStatusName/#Value",
+		"NetAmount": "#Page:SalesOrderHeader_create/#Control:FCNetAmount/#Value",
+		"TaxAmount": "#Page:SalesOrderHeader_create/#Control:FCTaxAmount/#Value"
+	},
+	"Target": {
+		"EntitySet": "SalesOrderHeaders",
+		"Service": "/DemoSampleApp/Services/Sample.service"
+	},
+	"_Type": "Action.Type.ODataService.CreateRelatedEntity"
+}
